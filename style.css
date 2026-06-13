@@ -1,0 +1,294 @@
+
+/* Premium Core Layout Variables & Reset */
+* {                                                                                                             box-sizing: border-box;
+    margin: 0;                                                                                                  padding: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}                                                                                                           
+body {                                                                                                          background-color: #0f172a;
+    color: #f8fafc;
+    min-height: 100vh;
+}
+
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 15px;
+}
+
+/* Nav & Global Header Modules */
+header {
+    background-color: #1e293b;
+    border-bottom: 1px solid #334155;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #38bdf8;
+    cursor: pointer;
+}
+
+nav {                                                                                                           display: flex;
+    align-items: center;                                                                                        gap: 12px;
+}
+
+/* UI Badges & Functional Buttons */                                                                        .badge {
+    background-color: #0284c7;
+    color: white;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+button {
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+}
+
+.btn-primary { background-color: #0284c7; color: white; }
+.btn-primary:hover { background-color: #0369a1; }
+.btn-secondary { background-color: #334155; color: #f8fafc; border: 1px solid #475569; }
+.btn-secondary:hover { background-color: #475569; }
+.btn-logout { background-color: #ef4444; color: white; }
+.btn-logout:hover { background-color: #dc2626; }
+.btn-danger { background-color: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4); }
+.btn-danger:hover { background-color: #ef4444; color: white; }                                              
+/* Authentication Display Framing */                                                                        .card-center {
+    display: flex;                                                                                              justify-content: center;
+    align-items: center;                                                                                        min-height: 70vh;
+}
+
+.auth-card, .card {                                                                                             background-color: #1e293b;
+    border-radius: 12px;
+    padding: 30px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.4);
+}
+
+.hint {
+    font-size: 0.8rem;
+    background-color: #334155;
+    padding: 10px;
+    border-radius: 6px;
+    color: #94a3b8;
+    margin: 15px 0;
+    line-height: 1.4;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 6px;
+}
+
+input, select {                                                                                                 width: 100%;
+    padding: 12px;
+    background-color: #334155;
+    border: 1px solid #475569;
+    border-radius: 8px;
+    color: white;                                                                                               font-size: 0.95rem;
+}                                                                                                           input:focus { border-color: #38bdf8; outline: none; }
+                                                                                                            /* Product Display Grids */
+.section-title {
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background-color: #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #334155;
+}
+
+.product-img-box {
+    width: 100%;
+    height: 200px;
+    background-color: #334155;
+}
+
+.product-img-box img {                                                                                          width: 100%;
+    height: 100%;
+    object-fit: cover;
+}                                                                                                           
+.product-info {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.product-desc {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.product-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+                                                                                                            .price-tag {
+    font-size: 1.25rem;                                                                                         font-weight: 700;
+    color: #38bdf8;
+}
+                                                                                                            /* Admin Dashboard Interface splits */
+.view-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 15px;
+}
+
+.admin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    align-items: start;
+}
+
+.admin-grid .card { max-width: 100%; }
+
+/* Orders Summary Rendering Blocks */
+.order-card {
+    background-color: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+                                                                                                            .order-meta {
+    display: flex;                                                                                              justify-content: space-between;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 12px;                                                                                        border-bottom: 1px solid #334155;
+    padding-bottom: 8px;
+}
+
+.order-items-summary {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* Modals / Drawers for Shopping Cart */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: flex-end;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #1e293b;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;                                                                                               display: flex;
+    flex-direction: column;
+    padding: 25px;
+    box-shadow: -5px 0 25px rgba(0,0,0,0.5);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 15px;
+}
+
+.close-modal {
+    font-size: 1.75rem;
+    cursor: pointer;
+    color: #94a3b8;
+}
+
+#cart-items-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.cart-item {                                                                                                    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #334155;
+}                                                                                                           
+.modal-footer {
+    border-top: 1px solid #334155;
+    padding-top: 20px;
+    margin-top: auto;
+}                                                                                                           
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* Notifications Banner Engine */
+.notification {
+    background-color: #0284c7;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+/* Utility Structure Helpers */
+.hidden { display: none !important; }
