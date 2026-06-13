@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1 class="logo" onclick="showStoreView()">GadgetHub</h1>
+            <nav id="nav-actions" class="hidden">
+                <span id="role-badge" class="badge">User</span>
+                <button id="btn-cart-toggle" onclick="toggleCartModal()">🛒 Cart (<span id="cart-count">0</span>)</button>
+                <button id="btn-orders-toggle" onclick="toggleOrdersView()">📋 My Orders</button>
+                <button id="btn-admin-toggle" class="hidden" onclick="showAdminView()">🛠️ Admin Panel</button>
+                <button class="btn-logout" onclick="logout()">Logout</button>
+            </nav>
+        </div>                                                                                                  </header>
+                                                                                                                <div class="main-container">
+        <div id="notification-bar" class="notification hidden"></div>
+                                                                                                                    <section id="auth-view" class="card-center">
+            <div class="auth-card">                                                                                         <h2>Sign In to Shop</h2>
+                <p class="hint">Admin login: <strong>admin</strong> / password: <strong>123</strong><br>Customer login: <strong>user</strong> / password: <strong>123</strong></p>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" id="username" required placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="password" required placeholder="Enter password">
+                    </div>
+                    <button type="submit" class="btn-primary">Login</button>
+                </form>
+            </div>
+        </section>
+
+        <section id="store-view" class="hidden">
+            <h2 class="section-title">Explore Featured Products</h2>
+            <div id="products-grid" class="products-grid">
+                </div>
+        </section>
+
+        <section id="orders-view" class="hidden">
+            <div class="view-header">
+                <h2>Order Tracking Summary</h2>
+                <button class="btn-secondary" onclick="showStoreView()">Back to Store</button>
+            </div>
+            <div id="orders-list-container">
+                </div>
+        </section>
+
+        <section id="admin-view" class="hidden">
+            <div class="view-header">
+                <h2>Admin Management Dashboard</h2>                                                                         <button class="btn-secondary" onclick="showStoreView()">Back to Store</button>                          </div>
+                                                                                                                        <div class="admin-grid">
+                <div class="card">                                                                                              <h3>Add New Catalog Item</h3>
+                    <form id="add-product-form">
+                        <div class="form-group">                                                                                        <label>Product Name</label>
+                            <input type="text" id="prod-name" required placeholder="e.g., Wireless Mouse">
+                        </div>
+                        <div class="form-group">
+                            <label>Price (₹)</label>
+                            <input type="number" id="prod-price" required placeholder="e.g., 999">
+                        </div>
+                        <div class="form-group">
+                            <label>Stock Quantity</label>                                                                               <input type="number" id="prod-stock" required placeholder="e.g., 20">
+                        </div>                                                                                                      <div class="form-group">
+                            <label>Description</label>
+                            <input type="text" id="prod-desc" placeholder="Brief technical descriptions...">                        </div>
+                        <div class="form-group">                                                                                        <label>Image URL (Optional)</label>
+                            <input type="text" id="prod-image" placeholder="https://example.com/item.jpg">
+                        </div>                                                                                                      <button type="submit" class="btn-primary">Publish Product</button>
+                    </form>                                                                                                 </div>
+
+                <div class="card">
+                    <h3>Incoming Global Customer Orders</h3>
+                    <div id="admin-orders-list">
+                        </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="cart-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Your Selected Basket</h3>
+                <span class="close-modal" onclick="toggleCartModal()">&times;</span>
+            </div>
+            <div id="cart-items-list">
+                </div>
+            <div class="modal-footer">
+                <div class="total-row">
+                    <strong>Total Amount:</strong>
+                    <span id="cart-total-amount">₹0</span>
+                </div>
+                <button class="btn-primary" onclick="checkoutCart()">Place Order & Checkout</button>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
