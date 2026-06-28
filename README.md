@@ -1,4 +1,4 @@
-# 🛒 Gadget
+# 🛒 Gadget Hub
 
 A full-stack e-commerce web application for buying and selling electronic gadgets — built with a clean shopping experience similar to modern e-commerce platforms.
 
